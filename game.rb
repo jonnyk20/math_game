@@ -15,7 +15,7 @@ class Game
 
   def report_score
     if winner?
-      puts "game over #{winner?.name} wins with a score of #{winner?.lives}/3"
+      puts "Game over! #{winner?.name} wins with a score of #{winner?.lives}/3"
     else
       puts "P1: #{@p1.lives}/3 vs P2: #{@p2.lives}/3"
       switch_turns
