@@ -14,8 +14,8 @@ class Game
   end
 
   def report_score
-    if is_over?
-      puts "game over #{is_over?.name} loses"
+    if winner?
+      puts "game over #{winner?.name} wins with a score of #{winner?.lives}/3"
     else
       puts "P1: #{@p1.lives}/3 vs P2: #{@p2.lives}/3"
       switch_turns
@@ -31,11 +31,11 @@ class Game
     run_turn
   end
 
-  def is_over?
+  def winner?
     if @p1.lives == 0
-      @p1
-    elsif @p2.lives == 0
       @p2
+    elsif @p2.lives == 0
+      @p1
     end
   end
 
